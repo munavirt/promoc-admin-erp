@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "node -e \"process.env.VITE_API_BASE_URL ||= 'http://127.0.0.1:8000/api'; import path from 'node:path'; import { createJiti } from 'jiti'; const jiti = createJiti(import.meta.url, { alias: { '@': path.resolve(process.cwd(), 'src') } }); await jiti.import('./src/services/auth/__tests__/demo-auth.test.ts'); await jiti.import('./src/mocks/__tests__/erp-mock-services.test.ts'); await jiti.import('./src/features/employees/__tests__/phase1-integration-units.test.ts'); await jiti.import('./src/features/projects/__tests__/phase2-units.test.ts'); await jiti.import('./src/features/tasks/__tests__/phase3-units.test.ts'); await jiti.import('./src/modules/finance/hooks/__tests__/phase4-finance-units.test.ts'); await jiti.import('./src/modules/finance/hooks/__tests__/phase5-invoices-payments-reports.test.ts'); await jiti.import('./src/modules/finance/utils/__tests__/chart-scale.test.ts');\"",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
@@ -38,6 +39,9 @@
     "@radix-ui/react-toggle-group": "^1.1.11",
     "@radix-ui/react-tooltip": "^1.2.8",
     "@tailwindcss/vite": "^4.2.1",
+    "@tanstack/react-query": "^5.101.4",
+    "@tanstack/react-table": "^8.21.3",
+    "axios": "^1.19.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -57,7 +61,7 @@
     "tailwindcss": "^4.2.1",
     "tw-animate-css": "^1.3.4",
     "vaul": "^1.1.2",
-    "zod": "^3.24.2",
+    "zod": "^4.6.7",
     "zustand": "^5.0.14"
   },
   "devDependencies": {

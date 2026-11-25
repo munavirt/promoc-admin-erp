@@ -4,15 +4,35 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * PromoCraft design system — blue on white.
+ * Cool-white canvas, floating white surfaces, #0062FF brand accent, semantic green/amber/red.
+ *
+ * Tailwind's blue/indigo/slate ramps are remapped to the brand palette so every existing
+ * page that used generic utility colours inherits the identity without per-file rewrites.
+ */
 @theme inline {
-  --radius-sm: 4px;
-  --radius-md: 8px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
   --radius-lg: 12px;
-  --radius-xl: 12px;
-  --radius-2xl: 12px;
-  --radius-3xl: 12px;
-  --radius-4xl: 12px;
-  
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  --radius-4xl: 28px;
+
+  --font-sans: "Manrope", "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Manrope", "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Soft, diffuse, cool-navy elevation */
+  --shadow-2xs: 0 1px 1px rgba(32, 43, 60, 0.03);
+  --shadow-xs: 0 1px 2px rgba(32, 43, 60, 0.04);
+  --shadow-sm: 0 1px 2px rgba(32, 43, 60, 0.03), 0 6px 20px -8px rgba(16, 50, 110, 0.1);
+  --shadow: 0 1px 2px rgba(32, 43, 60, 0.03), 0 10px 28px -10px rgba(16, 50, 110, 0.14);
+  --shadow-md: 0 2px 4px rgba(32, 43, 60, 0.03), 0 14px 34px -12px rgba(16, 50, 110, 0.16);
+  --shadow-lg: 0 4px 8px rgba(32, 43, 60, 0.03), 0 22px 48px -16px rgba(16, 50, 110, 0.2);
+  --shadow-xl: 0 6px 12px rgba(32, 43, 60, 0.04), 0 30px 64px -20px rgba(16, 50, 110, 0.26);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -21,6 +41,9 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-deep: var(--primary-deep);
+  --color-primary-hover: var(--primary-hover);
+  --color-border-active: var(--border-active);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -33,7 +56,35 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-  
+
+  --color-positive: var(--positive);
+  --color-positive-soft: var(--positive-soft);
+  --color-caution: var(--caution);
+  --color-caution-soft: var(--caution-soft);
+  --color-negative: var(--negative);
+  --color-negative-soft: var(--negative-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-hairline: var(--hairline);
+  --color-subtle: var(--subtle);
+  --color-faint: var(--faint);
+
+  /* Pastel category palette */
+  --color-brand-soft: var(--pastel-blue);
+  --color-sky: var(--pastel-sky);
+  --color-mint: var(--pastel-mint);
+  --color-peach: var(--pastel-peach);
+  --color-rose: var(--pastel-rose);
+  --color-butter: var(--pastel-butter);
+
+  --color-accent-2: var(--accent-2);
+  --color-accent-2-soft: var(--accent-2-soft);
+  --color-accent-2-deep: var(--accent-2-deep);
+
+  --color-chart-income: var(--chart-income);
+  --color-chart-expense: var(--chart-expense);
+  --color-chart-net: var(--chart-net);
+
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -42,43 +93,222 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand remap of generic utility ramps used across legacy pages:
+   * blue/indigo/violet/purple → PromoCraft blue, slate/gray → cool brand greys,
+   * rose/pink/fuchsia → semantic red (no pink in the brand). red/orange/amber keep Tailwind defaults. */
+  --color-blue-50: #eef5ff;
+  --color-blue-100: #eaf2ff;
+  --color-blue-200: #d4e5ff;
+  --color-blue-300: #bbd3ff;
+  --color-blue-400: #3384ff;
+  --color-blue-500: #1a73ff;
+  --color-blue-600: #0062ff;
+  --color-blue-700: #0056e8;
+  --color-blue-800: #004fcc;
+  --color-blue-900: #003d9e;
+  --color-blue-950: #002766;
+  --color-indigo-50: #eef5ff;
+  --color-indigo-100: #eaf2ff;
+  --color-indigo-200: #d4e5ff;
+  --color-indigo-300: #bbd3ff;
+  --color-indigo-400: #3384ff;
+  --color-indigo-500: #1a73ff;
+  --color-indigo-600: #0062ff;
+  --color-indigo-700: #0056e8;
+  --color-indigo-800: #004fcc;
+  --color-indigo-900: #003d9e;
+  --color-indigo-950: #002766;
+  --color-violet-50: #eef5ff;
+  --color-violet-100: #eaf2ff;
+  --color-violet-200: #d4e5ff;
+  --color-violet-300: #bbd3ff;
+  --color-violet-400: #3384ff;
+  --color-violet-500: #1a73ff;
+  --color-violet-600: #0062ff;
+  --color-violet-700: #0056e8;
+  --color-violet-800: #004fcc;
+  --color-violet-900: #003d9e;
+  --color-violet-950: #002766;
+  --color-purple-50: #eef5ff;
+  --color-purple-100: #eaf2ff;
+  --color-purple-200: #d4e5ff;
+  --color-purple-300: #bbd3ff;
+  --color-purple-400: #3384ff;
+  --color-purple-500: #1a73ff;
+  --color-purple-600: #0062ff;
+  --color-purple-700: #0056e8;
+  --color-purple-800: #004fcc;
+  --color-purple-900: #003d9e;
+  --color-purple-950: #002766;
+  --color-slate-50: #f8faff;
+  --color-slate-100: #f1f4f9;
+  --color-slate-200: #e7ecf4;
+  --color-slate-300: #cbd3e0;
+  --color-slate-400: #929db0;
+  --color-slate-500: #68758a;
+  --color-slate-600: #525e72;
+  --color-slate-700: #3d4859;
+  --color-slate-800: #2a3546;
+  --color-slate-900: #202b3c;
+  --color-slate-950: #141c28;
+  --color-gray-50: #f8faff;
+  --color-gray-100: #f1f4f9;
+  --color-gray-200: #e7ecf4;
+  --color-gray-300: #cbd3e0;
+  --color-gray-400: #929db0;
+  --color-gray-500: #68758a;
+  --color-gray-600: #525e72;
+  --color-gray-700: #3d4859;
+  --color-gray-800: #2a3546;
+  --color-gray-900: #202b3c;
+  --color-gray-950: #141c28;
+  --color-rose-50: #fef2f2;
+  --color-rose-100: #fee2e2;
+  --color-rose-200: #fecaca;
+  --color-rose-300: #fca5a5;
+  --color-rose-400: #f87171;
+  --color-rose-500: #ef4444;
+  --color-rose-600: #dc2626;
+  --color-rose-700: #b91c1c;
+  --color-rose-800: #991b1b;
+  --color-rose-900: #7f1d1d;
+  --color-rose-950: #450a0a;
+  --color-pink-50: #fef2f2;
+  --color-pink-100: #fee2e2;
+  --color-pink-200: #fecaca;
+  --color-pink-300: #fca5a5;
+  --color-pink-400: #f87171;
+  --color-pink-500: #ef4444;
+  --color-pink-600: #dc2626;
+  --color-pink-700: #b91c1c;
+  --color-pink-800: #991b1b;
+  --color-pink-900: #7f1d1d;
+  --color-pink-950: #450a0a;
+  --color-fuchsia-50: #fef2f2;
+  --color-fuchsia-100: #fee2e2;
+  --color-fuchsia-200: #fecaca;
+  --color-fuchsia-300: #fca5a5;
+  --color-fuchsia-400: #f87171;
+  --color-fuchsia-500: #ef4444;
+  --color-fuchsia-600: #dc2626;
+  --color-fuchsia-700: #b91c1c;
+  --color-fuchsia-800: #991b1b;
+  --color-fuchsia-900: #7f1d1d;
+  --color-fuchsia-950: #450a0a;
+
+  --animate-rise: rise 420ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-fade: fade 240ms ease-out both;
+  --animate-shimmer: shimmer 1.6s linear infinite;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
 }
 
 :root {
   --radius: 12px;
-  --background: #F7FAFF;                         /* App outer background */
-  --foreground: #111827;                         /* Primary text */
-  --card: #FFFFFF;                               /* Surface */
-  --card-foreground: #111827;
-  --popover: #FFFFFF;
-  --popover-foreground: #111827;
-  --primary: #2563EB;                            /* Primary */
-  --primary-foreground: #FFFFFF;
-  --secondary: #F8FAFC;                          /* Off-white */
-  --secondary-foreground: #111827;
-  --muted: #F3F4F6;
-  --muted-foreground: #6B7280;                   /* Secondary text */
-  --accent: #F3F4F6;
-  --accent-foreground: #111827;
-  --destructive: #DC2626;
-  --destructive-foreground: #FFFFFF;
-  --border: #E5E7EB;                             /* Border */
-  --input: #E5E7EB;
-  --ring: #2563EB;
-  
-  --success: #16A34A;
-  --warning: #F59E0B;
-  --status-error: #DC2626;
-  
-  /* Sidebar */
-  --sidebar: #FAFAFA;                            /* Slightly darker white for sidebar */
-  --sidebar-foreground: #111827;
-  --sidebar-primary: #2563EB;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #F3F4F6;
-  --sidebar-accent-foreground: #111827;
-  --sidebar-border: #E5E7EB;
-  --sidebar-ring: #2563EB;
+
+  /* ── PromoCraft brand: blue on white ───────────────────────────────── */
+  --brand: #0062ff;
+  --brand-deep: #004fcc;
+  --brand-hover: #0056e8;
+  --brand-light: #3384ff;
+
+  --background: #f5f8ff; /* main application background */
+  --foreground: #202b3c; /* primary text */
+  --card: #ffffff; /* primary surface */
+  --card-foreground: #202b3c;
+  --popover: #ffffff;
+  --popover-foreground: #202b3c;
+
+  --primary: var(--brand);
+  --primary-deep: var(--brand-deep);
+  --primary-hover: var(--brand-hover);
+  --primary-foreground: #ffffff;
+
+  --secondary: #f8faff; /* secondary surface */
+  --secondary-foreground: #202b3c;
+  --muted: #f8faff;
+  --muted-foreground: #68758a; /* secondary text */
+  --accent: #eaf2ff; /* soft blue surface */
+  --accent-foreground: #004fcc;
+
+  --border: #e7ecf4; /* default border */
+  --hairline: #edf1f7; /* subtle divider */
+  --border-active: #bbd3ff; /* active border */
+  --input: #e2e8f1;
+  --ring: #0062ff;
+
+  --subtle: #929db0; /* muted text */
+  --faint: #b8c1d1;
+
+  /* ── Semantic (not brand) ─────────────────────────────────────────── */
+  --positive: #16915f;
+  --positive-soft: #e7f7ef;
+  --caution: #b26a00;
+  --caution-soft: #fff5e0;
+  --negative: #dc2626;
+  --negative-soft: #fef1f1;
+  --info: var(--brand);
+  --info-soft: #eaf2ff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --success: #16915f;
+  --warning: #b26a00;
+  --status-error: #dc2626;
+
+  /* ── Category tints (blue-led, with semantic companions) ──────────── */
+  --pastel-blue: #eaf2ff; /* primary blue tint */
+  --pastel-sky: #e4f5fd; /* sky */
+  --pastel-mint: #e7f7ef;
+  --pastel-peach: #e4f5fd; /* secondary accent tint */
+  --pastel-rose: #fef1f1; /* semantic red tint */
+  --pastel-butter: #fff5e0; /* semantic amber tint */
+
+  /* Secondary accent: sky blue companion to the brand blue */
+  --accent-2: #1a9fe0;
+  --accent-2-deep: #0b78b0;
+  --accent-2-soft: #e4f5fd;
+
+  --chart-income: #0062ff;
+  --chart-expense: #ef4444;
+  --chart-net: #202b3c;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #202b3c;
+  --sidebar-primary: #0062ff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f2f7ff;
+  --sidebar-accent-foreground: #004fcc;
+  --sidebar-border: #e7ecf4;
+  --sidebar-ring: #0062ff;
 }
 
 @layer base {
@@ -86,15 +316,101 @@
     border-color: var(--color-border);
   }
 
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
   body {
     background-color: var(--color-background);
-    /* Layered background with very soft blue glows in corners */
-    background-image: 
-      radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.04) 0%, transparent 40%),
-      radial-gradient(circle at 100% 100%, rgba(37, 99, 235, 0.03) 0%, transparent 40%);
     color: var(--color-foreground);
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: var(--font-sans);
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--primary) 18%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--ring) 45%, transparent);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--subtle);
+  }
+
+  .figure {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+    letter-spacing: -0.015em;
+  }
+
+  /* The floating white surface used throughout the workspace */
+  .surface {
+    min-width: 0;
+    background: var(--card);
+    border-radius: 20px;
+    box-shadow:
+      0 1px 2px rgba(32, 43, 60, 0.03),
+      0 10px 30px -14px rgba(16, 50, 110, 0.14);
+  }
+
+  .surface-hover {
+    transition:
+      transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1),
+      box-shadow 220ms ease;
+  }
+  .surface-hover:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 2px 4px rgba(32, 43, 60, 0.03),
+      0 18px 40px -16px rgba(16, 50, 110, 0.22);
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, #f1f5fb 0%, #e6edf7 40%, #f1f5fb 80%);
+    background-size: 200% 100%;
+    animation: var(--animate-shimmer);
+    border-radius: 8px;
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .thin-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #d5dde9 transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

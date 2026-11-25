@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { DashboardShell } from "./dashboard-shell";
+import { AppLayout } from "@/components/layout/app-layout";
+import { PageHeader } from "@/components/shared/page-header";
 
 export function PageShell({
   title,
@@ -13,19 +14,11 @@ export function PageShell({
   children: ReactNode;
 }) {
   return (
-    <DashboardShell>
-      <div className="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-        <div>
-          <h1 className="text-[28px] font-semibold tracking-tight text-foreground">
-            {title}
-          </h1>
-          {description && (
-            <p className="mt-1.5 text-[14px] text-muted-foreground">{description}</p>
-          )}
-        </div>
-        {actions && <div className="flex shrink-0 items-center gap-3">{actions}</div>}
-      </div>
+    <AppLayout>
+      <PageHeader title={title} description={description}>
+        {actions}
+      </PageHeader>
       {children}
-    </DashboardShell>
+    </AppLayout>
   );
 }

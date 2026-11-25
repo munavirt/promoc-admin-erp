@@ -1,0 +1,101 @@
+import type { StoredProjectRecord } from "../types";
+
+export const INITIAL_MOCK_PROJECTS: StoredProjectRecord[] = [
+  {
+    id: 1,
+    project_name: "Q3 Product Launch Campaign",
+    clientId: "cli-1",
+    description:
+      "End-to-end launch positioning, interactive launch microsite, motion assets, and paid acquisition rollout for Northwind Labs India.",
+    priority: "HIGH",
+    status: "IN_PROGRESS",
+    progress: 72,
+    start_date: "2026-07-01",
+    deadline: "2026-12-10",
+    budget: 350000,
+    members: [
+      { id: "mem-1", employee_id: "emp-1", name: "Alex Morgan", employee_name: "Alex Morgan", role: "PROJECT_MANAGER", role_in_project: "PROJECT_MANAGER" },
+      { id: "mem-2", employee_id: "emp-3", name: "Kai Lombardi", employee_name: "Kai Lombardi", role: "UI_UX", role_in_project: "UI_UX" },
+      { id: "mem-3", employee_id: "emp-4", name: "Jules Tran", employee_name: "Jules Tran", role: "FRONTEND", role_in_project: "FRONTEND" },
+    ],
+    created_at: "2026-07-01T09:00:00Z",
+    updated_at: "2026-11-05T11:30:00Z",
+  },
+  {
+    id: 2,
+    project_name: "Brand Refresh 2026",
+    clientId: "cli-2",
+    description:
+      "Complete visual identity overhaul, typography & color token guidelines, and digital brand kit for Halcyon Media Studios.",
+    priority: "MEDIUM",
+    status: "IN_PROGRESS",
+    progress: 85,
+    start_date: "2026-06-10",
+    deadline: "2026-11-28",
+    budget: 220000,
+    members: [
+      { id: "mem-4", employee_id: "emp-2", name: "Rachel Singh", employee_name: "Rachel Singh", role: "PROJECT_MANAGER", role_in_project: "PROJECT_MANAGER" },
+      { id: "mem-5", employee_id: "emp-3", name: "Kai Lombardi", employee_name: "Kai Lombardi", role: "UI_UX", role_in_project: "UI_UX" },
+    ],
+    created_at: "2026-06-10T09:00:00Z",
+    updated_at: "2026-11-08T15:15:00Z",
+  },
+  {
+    id: 3,
+    project_name: "Festive Retail Omnichannel Sprint",
+    clientId: "cli-3",
+    description:
+      "Multi-channel festive retail creatives, influencer video cutdowns, attribution analytics, and conversion landing pages.",
+    priority: "URGENT",
+    status: "IN_PROGRESS",
+    progress: 56,
+    start_date: "2026-08-15",
+    deadline: "2026-12-20",
+    budget: 480000,
+    members: [
+      { id: "mem-6", employee_id: "emp-2", name: "Rachel Singh", employee_name: "Rachel Singh", role: "PROJECT_MANAGER", role_in_project: "PROJECT_MANAGER" },
+      { id: "mem-7", employee_id: "emp-3", name: "Kai Lombardi", employee_name: "Kai Lombardi", role: "UI_UX", role_in_project: "UI_UX" },
+      { id: "mem-8", employee_id: "emp-5", name: "Diego Pena", employee_name: "Diego Pena", role: "SEO", role_in_project: "SEO" },
+    ],
+    created_at: "2026-08-15T10:00:00Z",
+    updated_at: "2026-11-10T18:00:00Z",
+  },
+  {
+    id: 4,
+    project_name: "Corporate Website Rebuild",
+    clientId: "cli-4",
+    description:
+      "Responsive advisory portal rebuild with headless CMS architecture, structured case-study templates, and technical SEO.",
+    priority: "MEDIUM",
+    status: "COMPLETED",
+    progress: 100,
+    start_date: "2026-05-01",
+    deadline: "2026-09-25",
+    budget: 180000,
+    members: [
+      { id: "mem-9", employee_id: "emp-4", name: "Jules Tran", employee_name: "Jules Tran", role: "BACKEND", role_in_project: "BACKEND" },
+      { id: "mem-10", employee_id: "emp-3", name: "Kai Lombardi", employee_name: "Kai Lombardi", role: "UI_UX", role_in_project: "UI_UX" },
+    ],
+    created_at: "2026-05-01T09:00:00Z",
+    updated_at: "2026-09-25T17:00:00Z",
+  },
+  {
+    id: 5,
+    project_name: "D2C Retention & Packaging Revamp",
+    clientId: "cli-5",
+    description:
+      "Packaging structural prototyping, unboxing motion deliverables, and automated post-purchase lifecycle CRM workflows.",
+    priority: "LOW",
+    status: "PLANNING",
+    progress: 20,
+    start_date: "2026-10-20",
+    deadline: "2027-01-30",
+    budget: 260000,
+    members: [
+      { id: "mem-11", employee_id: "emp-1", name: "Alex Morgan", employee_name: "Alex Morgan", role: "PROJECT_MANAGER", role_in_project: "PROJECT_MANAGER" },
+      { id: "mem-12", employee_id: "emp-5", name: "Diego Pena", employee_name: "Diego Pena", role: "CONTENT", role_in_project: "CONTENT" },
+    ],
+    created_at: "2026-10-20T09:30:00Z",
+    updated_at: "2026-11-07T14:20:00Z",
+  },
+];

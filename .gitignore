@@ -16,6 +16,11 @@ dist-ssr
 .nitro
 *.local
 
+# Environment files
+.env
+.env.*
+!.env.example
+
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars
@@ -30,3 +35,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Phase 4 live verification output
+scripts/phase4-live-results.json
+scripts/phase5-live-results.json
